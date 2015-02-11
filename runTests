@@ -1,0 +1,3 @@
+./sbt "project sample-service-api" clean test
+./sbt "project sample-service" clean test
+./sbt "project sample-service-client" clean test
