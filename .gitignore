@@ -1,0 +1,13 @@
+build
+target
+.idea/*
+!.idea/runConfigurations
+.idea/runConfigurations/*
+!.idea/runConfigurations/CopyResources.xml
+!.idea/runConfigurations/Service_tests__local_.xml
+!.idea/runConfigurations/Service_tests__TeamCity_.xml
+.idea_modules
+logs
+libraries
+**/target/
+.DS_Store
