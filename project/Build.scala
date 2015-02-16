@@ -70,11 +70,11 @@ object ApplicationBuild extends Build {
     }
   )
 
-  def standardSettingsWithPublishedAssembly = standardSettingsWithAssembly ++ appReleaseSettings
+  def standardSettingsWithPublished = commonSettings ++ appReleaseSettings
 
   lazy val sampleApi = Project("sample-service-api",
     file("sample-service-api"),
-    settings = standardSettingsWithAssembly ++ Seq(
+    settings = commonSettings ++ Seq(
       assemblyJarName in assembly := "sample-service-api.jar",
       name := "sample-service-api",
       libraryDependencies ++= apiDependencies
@@ -83,7 +83,7 @@ object ApplicationBuild extends Build {
 
   lazy val sampleClient = Project("sample-service-client",
     file("sample-service-client"),
-    settings = standardSettingsWithPublishedAssembly ++ Seq(
+    settings = standardSettingsWithPublished ++ Seq(
       assemblyJarName in assembly := "sample-service-client.jar",
       name := "sample-service-client",
       libraryDependencies ++= clientDependencies ++ testDependencies
