@@ -37,8 +37,7 @@ object ApplicationBuild extends Build {
         Some("sonatype-snapshots" at nexus + "content/repositories/snapshots")
       else
         Some("sonatype-releases"  at nexus + "content/repositories/releases")
-    },
-    credentials += Credentials(Path.userHome / ".ivy2" / ".credentials")
+    }
   )
 
   def defaultResolvers = Seq(
@@ -51,7 +50,8 @@ object ApplicationBuild extends Build {
     autoScalaLibrary := false,
     scalaVersion := "2.10.2",
     crossPaths := false,
-    resolvers ++= defaultResolvers
+    resolvers ++= defaultResolvers,
+    credentials += Credentials(Path.userHome / ".ivy2" / ".credentials")
   )
 
 
